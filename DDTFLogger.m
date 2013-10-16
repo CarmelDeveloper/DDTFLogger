@@ -24,6 +24,8 @@ static DDTFLogger *sharedInstance;
 	if (!initialized) {
 		initialized = YES;
 		sharedInstance = [[DDTFLogger alloc] init];
+        [TestFlight setOptions:@{ TFOptionLogToConsole : @NO }];
+        [TestFlight setOptions:@{ TFOptionLogToSTDERR : @NO }];
 	}
 }
 
