@@ -55,10 +55,9 @@ static DDTFLogger *sharedInstance;
     {
 		switch (logMessage->logFlag)
 		{
-			case LOG_FLAG_ERROR :
-			case LOG_FLAG_WARN  : TFLog(@"%@", logMsg); break;
+			case LOG_FLAG_VERBOSE : break;
 			case LOG_FLAG_INFO  : [TestFlight passCheckpoint:logMsg]; break;
-			default             : break;
+			default             : TFLog(@"%@", logMsg); break;
 		}
     }
 }
